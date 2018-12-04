@@ -27,7 +27,7 @@ public class RotatingLookUp {
         int right = length - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (intArr[mid] == key) {
+            if (key == intArr[mid]) {
                 return mid + 1;
             } else if (intArr[mid] < intArr[right]) {
                 if (key > intArr[mid] && key <= intArr[right]) {
@@ -36,7 +36,7 @@ public class RotatingLookUp {
                     right = mid - 1;
                 }
             } else {
-                if (key < intArr[mid] && key >= intArr[left]) {
+                if (key > intArr[mid] && key <= intArr[left]) {
                     right = mid - 1;
                 } else {
                     left = mid + 1;
@@ -53,8 +53,6 @@ public class RotatingLookUp {
 
         System.out.println(searchRotated(intArr, 11, intArr.length));
     }
-
-
 
 
 }
